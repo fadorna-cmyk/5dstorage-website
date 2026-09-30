@@ -26,7 +26,11 @@
     const map = document.createElement('iframe');
     map.src = embedUrl; map.title = '5D Storage location map'; map.loading = 'lazy';
     map.referrerPolicy = 'no-referrer-when-downgrade'; map.allowFullscreen = true;
-    document.querySelector('#map-panel').replaceChildren(map);
+    const panel = document.querySelector('#map-panel');
+    const existingMap = panel.querySelector('iframe');
+    if (!existingMap || existingMap.src !== embedUrl) {
+      if (existingMap) existingMap.replaceWith(map); else panel.prepend(map);
+    }
   }
   const siteUrl = safeUrl(config.siteUrl, ['https:']);
   if (siteUrl) { const canonical = document.createElement('link'); canonical.rel = 'canonical'; canonical.href = siteUrl; document.head.append(canonical); }
