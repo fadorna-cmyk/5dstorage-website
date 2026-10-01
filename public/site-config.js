@@ -6,6 +6,6 @@ window.SITE_CONFIG = {
   mapsUrl: 'https://www.google.com/maps/search/?api=1&query=RRI%20Building%2C%20811%20S%20Laurel%20Street%2C%20Addition%20Hills%2C%20Mandaluyong%20City',
   mapEmbedUrl: 'https://www.google.com/maps?q=RRI%20Building%2C%20811%20S%20Laurel%20Street%2C%20Addition%20Hills%2C%20Mandaluyong%20City&output=embed',
   siteUrl: '',
-  closingCopy: 'Contact us or visit our convenient location',
+  mapsLabel: 'Google Maps',
   locationSideBySideOnMobile: false
 };

@@ -10,15 +10,13 @@
     const href = link.dataset.contact === 'email' ? email : viber;
     if (href) { link.href = href; link.removeAttribute('aria-disabled'); }
   }
-  if (config.address) document.querySelector('#address').textContent = config.address;
-  if (config.closingCopy) document.querySelector('#closing-copy').textContent = config.closingCopy;
   if (config.locationSideBySideOnMobile) document.querySelector('.location-row').style.gridTemplateColumns = 'repeat(2,minmax(0,1fr))';
   const mapsUrl = safeUrl(config.mapsUrl, ['https:']);
   if (mapsUrl) {
     const address = document.querySelector('#address');
     const link = document.createElement('a');
     link.href = mapsUrl; link.target = '_blank'; link.rel = 'noopener noreferrer';
-    link.textContent = config.address || 'Open in Google Maps';
+    link.textContent = config.mapsLabel || 'Google Maps';
     address.replaceChildren(link);
   }
   const embedUrl = safeUrl(config.mapEmbedUrl, ['https:']);
